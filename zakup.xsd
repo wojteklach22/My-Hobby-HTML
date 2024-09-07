@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:annotation>
+    <xs:documentation xml:lang="pl">
+      XML Schema do dziennego zestawienia.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="zakup" type="zakup_typ"/>
+  
+  <xs:complexType name="zakup_typ">
+    <xs:sequence>
+      <xs:element name="wysylka" maxOccurs="unbounded"/>
+      <xs:element name="odbior" maxOccurs="unbounded"/>
+      <xs:element name="links" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="komentarz" type="xs:string"/>
+
+  <xs:complexType name="naprawa_typ">
+    <xs:sequence>
+      <xs:element ref="komentarz" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="zamowienie_typ">
+    <xs:sequence>
+      <xs:element name="informacje_ogolne" type="xs:string" minOccurs="0" />
+      <xs:element name="nabywca" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="czesci" minOccurs="0"/>
+      <xs:element name ="plakaty" type="plakaty_typ"/>
+      <xs:element name ="cena_koncowa" type="cena_koncowa_typ"/>
+      <xs:element ref="szacowany_czas_dostawy"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="informacje_ogolne_typ">
+    <xs:sequence>
+      <xs:element name="przeznaczenie" type="przeznaczenie_typ"/>
+      <xs:element name="preferencje" type="preferencje_typ"/>
+      <xs:element name="cena_max" type="cena_max_typ"/>
+      <xs:element name="wymogi" type="wymogi_typ" minOccurs="0"/>
+      <xs:element ref="szacowany_czas_dostawy"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="kod_pocztowy">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}-\d{3}"/>
+      <xs:length value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:complexType name="nabywca_typ">
+    <xs:sequence>
+      <xs:element name="imie" type="xs:string" minOccurs="1" maxOccurs="2"/>
+      <xs:element name="nazwisko" minOccurs="1" maxOccurs="2" type="xs:string"/>
+      <xs:element name="ulica" type="xs:string"/>
+      <xs:element name="kod_pocztowy"/>
+      <xs:element name="miasto" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="kraj" type="xs:NMTOKENS"/>
+  </xs:complexType>
+
+  <xs:simpleType name="cena_typ">
+    <xs:restriction base="xs:decimal">
+       <xs:pattern value="\p{Sc}\p{Nd}+(\.\p{Nd}\p{Nd})?"/>
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="10000"/>
+    </xs:restriction>
+    </xs:simpleType>
+
+  <xs:simpleType name="klasa">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="czesci_typ">
+    <xs:sequence>
+      <xs:element name="component" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nazwa" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="producent" type="xs:string"/>
+            <xs:element name="wysokosc" type="xs:string"/>
+            <xs:element name="twardosc" type="xs:string"/>
+            <xs:element name="klasa" type="xs:string"/>
+            <xs:element name="ilosc" type="ilosc_typ"/>
+            <xs:element name="rozmiar" type="xs:decimal"/>
+            <xs:element name="cena" type="cena_typ"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="odbior_typ">
+    <xs:sequence>
+      <xs:element name="zamowienie" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="cena_koncowa_typ">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="1000000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cena_max_typ">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="10000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="wymogi_typ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Duży deck" />
+      <xs:enumeration value="Wytrzymałość" />
+      <xs:enumeration value="Składować w zimnym miejscu" />
+      <xs:enumeration value="Brak"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="preferencje_typ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Miękka" />
+      <xs:enumeration value="Niska" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="plakaty_typ">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="przeznaczenie_typ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nauka jazdy" />
+      <xs:enumeration value="Deska wyczynowa" />
+      <xs:enumeration value="Magazyn" />
+      <xs:enumeration value="Sklep" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ilosc_typ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
+      <xs:enumeration value="5" />
+      <xs:enumeration value="6" />
+      <xs:enumeration value="7" />
+      <xs:enumeration value="8" />
+      <xs:enumeration value="9" />
+      <xs:enumeration value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+  <xs:element name="szacowany_czas_dostawy" type="xs:date"/>
+  <xs:attribute name="data" type="xs:date" />
+
+</xs:schema>

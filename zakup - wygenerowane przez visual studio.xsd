@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="zakup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="wysylka">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="komentarz" type="xs:string" />
+							<xs:element maxOccurs="unbounded" name="zamowienie">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="informacje_ogolne">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="przeznaczenie" type="xs:string" />
+													<xs:element name="cena_max" type="xs:string" />
+													<xs:element name="wymogi" type="xs:string" />
+													<xs:element name="preferencje" type="xs:string" />
+													<xs:element name="szacowany_czas_dostawy" type="xs:date" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="nabywca">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="imie" type="xs:string" />
+													<xs:element name="nazwisko" type="xs:string" />
+													<xs:element name="ulica" type="xs:string" />
+													<xs:element name="kod_pocztowy" type="xs:string" />
+													<xs:element name="miasto" type="xs:string" />
+												</xs:sequence>
+												<xs:attribute name="kraj" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="czesci">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="unbounded" name="component">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nazwa" type="xs:string" />
+																<xs:element name="producent" type="xs:string" />
+																<xs:element minOccurs="0" name="dlugosc" type="xs:string" />
+																<xs:element minOccurs="0" name="klasa" type="xs:string" />
+																<xs:element minOccurs="0" name="twardosc" type="xs:string" />
+																<xs:element minOccurs="0" name="wysokosc" type="xs:string" />
+																<xs:element minOccurs="0" name="rozmiar" type="xs:decimal" />
+																<xs:element name="ilosc" type="xs:unsignedByte" />
+																<xs:element name="cena" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="cena_koncowa" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="odbior">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="komentarz" type="xs:string" />
+							<xs:element maxOccurs="unbounded" name="zamowienie">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="plakaty">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="image">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="unbounded" name="url" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="informacje_ogolne">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="przeznaczenie" type="xs:string" />
+													<xs:element name="wymogi" type="xs:string" />
+													<xs:element name="szacowany_czas_dostawy" type="xs:date" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="links">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="link">
+								<xs:complexType>
+									<xs:attribute name="href" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

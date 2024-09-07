@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE zakup SYSTEM "zakup.dtd">
+
+<zakup>
+
+	<wysylka>
+		<komentarz>Paczki z opcją "szybka dostawa"</komentarz>
+	<zamowienie>
+	       <informacje_ogolne>
+		<przeznaczenie>Nauka jazdy</przeznaczenie>
+		<cena_max>133.00$</cena_max>
+		<wymogi>Duży deck</wymogi>
+		<preferencje>Miękka</preferencje>
+		<szacowany_czas_dostawy>2020-11-25</szacowany_czas_dostawy>
+	       </informacje_ogolne>
+	     <nabywca kraj="PL">
+		<imie>Piotr</imie>
+		<nazwisko>Wiśniewski</nazwisko>
+		<ulica>Szafowa 2</ulica>
+		<kod_pocztowy>90-991</kod_pocztowy>
+		<miasto>Sopot</miasto>
+	     </nabywca>
+	     <czesci>
+	       <component>
+		<nazwa>Deck</nazwa>
+		<producent>Jart</producent>
+		<rozmiar>8</rozmiar>
+		<ilosc>1</ilosc>
+		<cena>40.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Traki</nazwa>
+		<producent>Industrial</producent>
+		<wysokosc>Wysokie</wysokosc>
+		<ilosc>2</ilosc>
+		<cena>40.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Kółka</nazwa>
+		<producent>Bones</producent>
+		<twardosc>Miękkie</twardosc>
+		<rozmiar>56</rozmiar>
+		<ilosc>4</ilosc>
+		<cena>27.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Łożyska</nazwa>
+		<producent>Rush</producent>
+		<klasa>ABEC5</klasa>
+		<ilosc>8</ilosc>
+		<cena>13.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Grip</nazwa>
+		<producent>Jessup</producent>
+		<ilosc>1</ilosc>
+		<cena>4.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Montażówki</nazwa>
+		<producent>Shake Junt</producent>
+		<dlugosc>7/8"</dlugosc>
+		<ilosc>8</ilosc>
+		<cena>2.50$</cena>
+	       </component>
+	     </czesci>
+	     <cena_koncowa>126.50$</cena_koncowa>
+	</zamowienie>
+	<zamowienie>
+	       <informacje_ogolne>
+		<przeznaczenie>Deska wyczynowa</przeznaczenie>
+		<cena_max>293.00$</cena_max>
+		<wymogi>Wytrzymałość</wymogi>
+		<preferencje>Niska</preferencje>
+		<szacowany_czas_dostawy>2020-11-27</szacowany_czas_dostawy>
+	       </informacje_ogolne>
+	     <nabywca kraj="CZ">
+		<imie>Andrzej</imie>
+		<nazwisko>Skwaryl</nazwisko>
+		<ulica>Pod Lipkami 12</ulica>
+		<kod_pocztowy>12-591</kod_pocztowy>
+		<miasto>Praga</miasto>
+	     </nabywca>
+	     <czesci>
+	       <component>
+		<nazwa>Deck</nazwa>
+		<producent>DGK</producent>
+		<rozmiar>8.125</rozmiar>
+		<ilosc>1</ilosc>
+		<cena>66.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Traki</nazwa>
+		<producent>Tensor</producent>
+		<wysokosc>Niskie</wysokosc>
+		<ilosc>2</ilosc>
+		<cena>93.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Kółka</nazwa>
+		<producent>Bones</producent>
+		<twardosc>Twarde</twardosc>
+		<rozmiar>52</rozmiar>
+		<ilosc>4</ilosc>
+		<cena>53.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Łożyska</nazwa>
+		<producent>Reds</producent>
+		<klasa>ABEC7</klasa>
+		<ilosc>8</ilosc>
+		<cena>43.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Grip</nazwa>
+		<producent>Jessup</producent>
+		<ilosc>1</ilosc>
+		<cena>4.00$</cena>
+	       </component>
+	       <component>
+		<nazwa>Montażówki</nazwa>
+		<producent>Diamond Supply Co</producent>
+		<dlugosc>7/8"</dlugosc>
+		<ilosc>8</ilosc>
+		<cena>4.00$</cena>
+	       </component>
+	     </czesci>
+	     <cena_koncowa>263.00$</cena_koncowa>
+	</zamowienie>
+	</wysylka>
+
+	<odbior>
+		<komentarz>Odebrać i przenieść do wyznaczonego miejsca</komentarz>
+	<zamowienie>
+	       <informacje_ogolne>
+		<przeznaczenie>Magazyn</przeznaczenie>
+		<wymogi>Składować w zimnym miejscu</wymogi>
+		<szacowany_czas_dostawy>2020-11-26</szacowany_czas_dostawy>
+	       </informacje_ogolne>
+	</zamowienie>
+	<zamowienie>
+	       <informacje_ogolne>
+		<przeznaczenie>Sklep</przeznaczenie>
+		<wymogi>Brak</wymogi>
+		<szacowany_czas_dostawy>2020-11-27</szacowany_czas_dostawy>
+	       </informacje_ogolne>
+	</zamowienie>
+	<zamowienie>
+	<plakaty>
+	       <image>
+		<url>images/123.jpg</url>
+		<url>images/deska.jpg</url>
+		<url>images/deck.jpg</url>
+		<url>images/truck.jpg</url>
+	       </image>
+	</plakaty>
+	</zamowienie>
+	</odbior>
+   	<links>
+		<link href='https://www.w3schools.com'/>
+		<link href='https://www.corefiling.com'/>
+		<link href='https://pg.edu.pl'/>
+		<link href='http://www.wp.pl'/>
+	</links>
+</zakup>
+<author>&author;</author>
+<email>&email;</email>
+
+	
+
+		 

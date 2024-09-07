@@ -1,0 +1,52 @@
+<!DOCTYPE zakup [
+
+<!ELEMENT zakup (#PCDATA | wysylka | links | odbior)*>
+<!ELEMENT wysylka (#PCDATA | komentarz | zamowienie)*>
+<!ELEMENT zamowienie (#PCDATA | informacje_ogolne | nabywca | czesci | cena_koncowa)*>
+<!ELEMENT odbior (#PCDATA | komentarz | zamowienie | plakaty | links)*>
+<!ELEMENT plakaty (#PCDATA | image)*>
+<!ELEMENT links (#PCDATA)>
+<!ELEMENT komentarz (#PCDATA)>
+<!ELEMENT informacje_ogolne (przeznaczenie , cena_max , wymogi , preferencje , szacowany_czas_dostawy)*>
+<!ELEMENT nabywca (#PCDATA | imie | nazwisko | ulica | kod_pocztowy | miasto)*>
+<!ELEMENT cena_max (#PCDATA)>
+<!ELEMENT wymogi (#PCDATA)>
+<!ELEMENT preferencje (#PCDATA)>
+<!ELEMENT szacowany_czas_dostawy (#PCDATA)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT ulica (#PCDATA)>
+<!ELEMENT kod_pocztowy (#PCDATA)>
+<!ELEMENT miasto (#PCDATA)>
+<!ELEMENT przeznaczenie (#PCDATA)>
+<!ELEMENT czesci (#PCDATA | component)*>
+<!ELEMENT component (wysokosc , twardosc , klasa ,(nazwa | producent | rozmiar | ilosc | cena), dlugosc)*>
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT producent (#PCDATA)>
+<!ELEMENT rozmiar (#PCDATA)>
+<!ELEMENT ilosc (#PCDATA)>
+<!ELEMENT cena (#PCDATA)>
+<!ELEMENT wysokosc (#PCDATA)>
+<!ELEMENT twardosc (#PCDATA)>
+<!ELEMENT klasa (#PCDATA)>
+<!ELEMENT dlugosc (#PCDATA)>
+<!ELEMENT cena_koncowa (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ATTLIST  cena_max cena_max CDATA #REQUIRED>
+<!ATTLIST  imie imie ID #REQUIRED>
+<!ATTLIST  nazwisko nazwisko ID #REQUIRED>
+<!ATTLIST  ilosc ilosc (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10) #REQUIRED>
+<!ATTLIST  komentarz komentarz CDATA #IMPLIED>
+<!ATTLIST  wymogi wymogi CDATA #IMPLIED>
+<!ATTLIST  preferencje preferencje CDATA #IMPLIED>
+<!ATTLIST  nabywca kraj CDATA "PL">
+<!ATTLIST zakup xmlns CDATA #FIXED ''>
+<!ATTLIST plakaty xmlns CDATA #FIXED ''>
+
+<!ENTITY % author "Wojciech Lach">
+<!ENTITY % email "s185759@student.pg.edu.pl">
+
+]>
